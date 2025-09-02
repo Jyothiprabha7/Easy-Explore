@@ -1,0 +1,64 @@
+body {
+background-image: url(https://static.toiimg.com/photo/msid-96457229,width-96,height-65.cms);
+background-position:fill;
+background-repeat:no repeat;
+background-size:cover;
+font-family: 'Arial', sans-serif;
+margin: 0;
+padding: 0;
+}
+
+.form-center-inf {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.login-form-content {
+/*background-image: url(https://static.toiimg.com/photo/msid-96457229,width-96,height-65.cms);*/ 
+padding: 150px;
+border-radius: 10px;
+text-align: center;
+}
+
+h2 {
+color: orange;
+font-size:34px;
+}
+
+form {
+margin-top: 20px;
+}
+
+.one-frm {
+margin-bottom: 15px;
+}
+
+label {
+font-size: 27px;
+color: lightblack;
+}
+
+input {
+width: 100%;
+padding: 10px;
+box-sizing: border-box;
+border: 1px solid #ccc;
+border-radius: 4px;
+font-size: 16px;
+}
+
+.btn {
+background-color: #3498db;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+}
+
+.btn:hover {
+background-color: #2980b9;
+}

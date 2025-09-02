@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="styles.css">
+<title>Your Travel Booking Page</title>
+</head>
+<body>
+<div class="form-center-inf">
+<div class="login-form-content">
+<h2>EasyBook</h2>
+<form class="signin-form" method="post" onsubmit="return handleBooking()">
+<div class="one-frm">
+<label>Enter Mode of transport</label>
+<input type="text" name="mode" id="transport" placeholder="flight/train/bus" required="">
+</div>
+<div class="one-frm">
+<label>From</label>
+<input type="text" id="departure" name="place" placeholder="Departure City" required="" onkeypress="handleKeyPress(event, 'to')">
+</div>
+<div class="one-frm">
+<label>To</label>
+<input type="text" id="destination" name="place" placeholder="Destination City" required="" onkeypress="handleKeyPress(event, 'date')">
+</div>
+<div class="one-frm">
+<label>Date</label>
+<input type="date" id="date" name="date" placeholder="Select Date" required="" onkeypress="handleKeyPress(event, 'submit')">
+</div>
+<div class="one-frm">
+<label>Email</label>
+<input type="email" name="email" id="mail" placeholder="Enter E-Mail" required="" >
+</div>
+<div class="one-frm">
+<label>Number of Persons</label>
+<input type="number" min="1" max="10" name="no" id="num" placeholder="Upto 10 persons only" required="">
+</div>
+<button type="button" class="btn btn-style mt-3" onclick="handleBooking()">BOOK </button>
+</form>
+</div>
+<script>
+function handleBooking() {
+// Perform client-side validation
+var transport = document.getElementById('transport').value;
+var departure = document.getElementById('departure').value;
+var destination = document.getElementById('destination').value;
+var date = document.getElementById('date').value;
+var email = document.getElementById('mail').value;
+var number = document.getElementById('num').value;
+// Check if required fields are filled
+if (!transport || !departure || !destination || !date || !email || !number) {
+alert("Please fill out all required fields.");
+return false; // Prevent form submission
+}
+// If everything is valid, show confirmation message
+alert("Booking successful!");
+// For demonstration purposes, reload the page
+location.reload();
+}
+function handleKeyPress(event, nextField) {
+if (event.key === 'Enter') {
+event.preventDefault();
+if (nextField === 'to') {
+document.getElementById('destination').focus();
+} else if (nextField === 'date') {
+document.getElementById('date').focus();
+} else if (nextField === 'submit') {
+handleBooking();
+}
+}
+}
+</script>
+</body>
+</html>
